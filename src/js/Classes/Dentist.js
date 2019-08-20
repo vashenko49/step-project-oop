@@ -1,5 +1,5 @@
 import {Visit} from "./Visit";
-import {createElement} from "./commonFunction";
+import {createElement} from "../commonFunction";
 
 export class Dentist extends Visit{
     constructor(purposeVisit,lastVisit,firstName, lastName, middleName){

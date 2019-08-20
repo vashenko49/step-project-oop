@@ -1,5 +1,6 @@
 import {Visit} from "./Visit";
-import {createElement} from "./commonFunction";
+import {createElement} from "../commonFunction";
+
 
 export class Cardiologist extends Visit{
     constructor(purposeVisit,normalPressure,bodyMassIndex, pastIllnesses,age, firstName, lastName, middleName){

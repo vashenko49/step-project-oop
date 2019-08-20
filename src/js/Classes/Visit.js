@@ -1,4 +1,4 @@
-import {createElement} from "./commonFunction";
+import {createElement} from "../commonFunction";
 
 export class Visit {
     constructor(firstName, lastName, middleName, purposeVisit) {
