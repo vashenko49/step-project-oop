@@ -5,6 +5,7 @@ export class Therapist extends Visit {
     constructor(purposeVisit,age,firstName, lastName, middleName){
         super(firstName, lastName, middleName, purposeVisit);
         this.age=age;
+        this.nameDoctor = "Терапевт";
     }
     static createField(){
         let fragment = super.createField();

@@ -5,6 +5,7 @@ import {createElement} from "../commonFunction";
 export class Cardiologist extends Visit{
     constructor(purposeVisit,normalPressure,bodyMassIndex, pastIllnesses,age, firstName, lastName, middleName){
         super(firstName, lastName, middleName, purposeVisit);
+        this.nameDoctor = "Кардиолог";
         this.age=age;
         this.normalPressure = normalPressure;
         this.bodyMassIndex = bodyMassIndex;
