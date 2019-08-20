@@ -18,6 +18,8 @@ function highlightMenuItem(x) {
     }
 }
 
+
+
 let x = window.matchMedia("(max-width: 480px)");
 highlightMenuItem(x);
 x.addListener(highlightMenuItem);
