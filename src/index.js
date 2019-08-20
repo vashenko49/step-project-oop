@@ -1,25 +1,14 @@
-import example from "./js/module";
+import {Cardiologist} from "./js/Classes/Cardiologist";
+import {Dentist} from "./js/Classes/Dentist";
+import {Therapist} from "./js/Classes/Therapist";
 
-console.log(example(4));
-console.log(example(4, 5));
+document.body.appendChild(Cardiologist.createField());
+console.log(Dentist.createField());
+console.log(Therapist.createField());
 
-
-function highlightMenuItem(x) {
-    if (x.matches) { // If media query matches
-        let menu = document.querySelector('.menu');
-        menu.addEventListener('click',function (event) {
-            let target = event.target;
-            let elderSelect = document.querySelector('.selectItem');
-            if(elderSelect){
-                elderSelect.classList.remove('selectItem');
-            }
-            target.classList.add('selectItem');
-        });
-    }
-}
+let checl = document.getElementById('check');
+checl.addEventListener('click',function () {
+    console.log(Cardiologist.findField());
+});
 
 
-
-let x = window.matchMedia("(max-width: 480px)");
-highlightMenuItem(x);
-x.addListener(highlightMenuItem);
