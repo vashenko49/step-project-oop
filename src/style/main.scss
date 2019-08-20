@@ -1,10 +1,8 @@
+$font-family: Factoria, sans-serif;
+$bg-color: #acd8ad;
+$main-color: #74d24a;
+
 @import "reset";
 @import "font";
+@import "header";
 @import "card";
-
-.gogo{
-  font-family: Factoria, sans-serif;
-}
-p{
-  color: yellow;
-}

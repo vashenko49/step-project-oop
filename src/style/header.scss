@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 15%;
+  padding: 10px;
+  background-color: $bg-color;
+  font-size: 20px;
+  font-family: $font-family;
+  color: #fff;
+
+  &__logo-img {
+    width: 60px;
+  }
+
+  &__create-btn {
+    width: 100px;
+    background-color: $main-color;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s background-color ease;
+  }
+
+  &__create-btn:hover {
+    background-color: #fff;
+    color: $main-color;
+  }
+}
+
