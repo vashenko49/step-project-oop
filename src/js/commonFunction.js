@@ -31,16 +31,11 @@ export function randomId(){
 }
 
 export function createWindow(createFields) {
-    const dialogWrap = document.createElement('div');
-    const dialogWindow = document.createElement('div');
-    const dialogClose = document.createElement('span');
+    const dialogWrap = createElement('div',['dialog']);
+    const dialogWindow = createElement('div',['dialog__window']);
+    const dialogClose = createElement('span',['dialog__close'],"","",false,'&#10006');
     dialogWrap.appendChild(dialogWindow);
     dialogWindow.appendChild(dialogClose);
-
-    dialogWrap.className = 'dialog';
-    dialogWindow.className = 'dialog__window';
-    dialogClose.className = 'dialog__close';
-    dialogClose.innerHTML = '&#10006';
 
     dialogClose.after(createFields());
 
@@ -54,11 +49,9 @@ export function createWindow(createFields) {
 }
 
 export function createSelect() {
-    const dialogSelect = document.createElement('select');
-    dialogSelect.className = 'dialog__doctor';
+    const dialogSelect = createElement('select',["dialog__doctor"]);
 
-    const dialogSelectOpt = document.createElement('option');
-    dialogSelectOpt.innerText = 'Cardiologist';
+    const dialogSelectOpt = createElement('option',[],"","",false,"Cardiologist");
     dialogSelect.appendChild(dialogSelectOpt.cloneNode(true));
     dialogSelectOpt.innerText = 'Dentist';
     dialogSelect.appendChild(dialogSelectOpt.cloneNode(true));
