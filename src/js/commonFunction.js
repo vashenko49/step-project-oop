@@ -32,6 +32,7 @@ export function randomId(){
 
 export function createWindow(createFields) {
     const dialogWrap = createElement('div',['dialog']);
+    dialogWrap.style.height =  document.documentElement.scrollHeight + 'px';
     const dialogWindow = createElement('div',['dialog__window']);
     const dialogClose = createElement('span',['dialog__close'],"","",false,'&#10006');
     dialogWrap.appendChild(dialogWindow);
@@ -50,7 +51,6 @@ export function createWindow(createFields) {
 
 export function createSelect() {
     const dialogSelect = createElement('select',["dialog__doctor"]);
-
     const dialogSelectOpt = createElement('option',[],"","",false,"Cardiologist");
     dialogSelect.appendChild(dialogSelectOpt.cloneNode(true));
     dialogSelectOpt.innerText = 'Dentist';
@@ -59,4 +59,12 @@ export function createSelect() {
     dialogSelect.appendChild(dialogSelectOpt.cloneNode(true));
 
     return dialogSelect;
+}
+
+export function updateLocalStrg(key, obj) {
+  if (obj) {
+    localStorage.setItem(key, JSON.stringify(obj))
+  } else {
+    localStorage.removeItem(key);
+  }
 }
