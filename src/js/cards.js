@@ -32,6 +32,13 @@ export function generationСard (id) {
     let buttonAdditionInf = createElement('button',['card__more']);
     buttonAdditionInf.innerHTML = "Показать больше";
     buttonAdditionInf.addEventListener('click',function () {
+
+        createWindow(function () {
+            let informationAboutCard = createElement('div',['something']);
+            for(let key in globalObjectCards[id]){
+
+            }
+        });
         /**
          * сгенерить диалоговое окно с информацие про карточку
          */

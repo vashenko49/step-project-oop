@@ -25,7 +25,14 @@ export class Visit {
         result.additionalComments = document.getElementById('additionalComments').value;
         return result
     }
+    static createLineAboutYourself(){
+        let fragment = document.createDocumentFragment();
+        let tr = createElement('tr',['something']);
+        tr.appendChild(createElement('td',['something'],"","",false,"First name"));
+        tr.appendChild(createElement('td',['something'],"","",false, this.firstName));
+    }
 }
+
 
 
 
