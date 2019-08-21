@@ -1,4 +1,4 @@
-import {createElement} from "../commonFunction";
+import {createElement, createTrTable} from "../commonFunction";
 
 export class Visit {
     constructor(firstName, lastName, middleName, purposeVisit,additionalComments='No comments' ) {
@@ -26,11 +26,14 @@ export class Visit {
         return result
     }
     static createLineAboutYourself(){
-        let fragment = document.createDocumentFragment();
-        let tr = createElement('tr',['something']);
-        tr.appendChild(createElement('td',['something'],"","",false,"First name"));
-        tr.appendChild(createElement('td',['something'],"","",false, this.firstName));
+        let table = createElement('table',['something']);
+        table.appendChild(createTrTable(['First name',this.firstName]));
+        table.appendChild(createTrTable(['Last name',this.lastName]));
+        table.appendChild(createTrTable(['Middle name',this.middleName]));
+        table.appendChild(createTrTable(['Purpose of the visit',this.purposeVisit]));
+        return table;
     }
+
 }
 
 

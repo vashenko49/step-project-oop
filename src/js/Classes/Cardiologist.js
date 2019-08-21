@@ -1,11 +1,11 @@
 import {Visit} from "./Visit";
-import {createElement} from "../commonFunction";
+import {createElement, createTrTable} from "../commonFunction";
 
 
 export class Cardiologist extends Visit{
     constructor(purposeVisit,normalPressure,bodyMassIndex, pastIllnesses,age, firstName, lastName, middleName, additionalComments){
         super(firstName, lastName, middleName, purposeVisit, additionalComments);
-        this.nameDoctor = "Кардиолог";
+        this.nameDoctor = "Cardiologist";
         this.age=age;
         this.normalPressure = normalPressure;
         this.bodyMassIndex = bodyMassIndex;
@@ -28,6 +28,15 @@ export class Cardiologist extends Visit{
         result.bodyMassIndex=document.getElementById('bodyMassIndex').value;
         result.pastIllnesses=document.getElementById('pastIllnesses').value;
         return result
-
+    }
+    static createLineAboutYourself(){
+        let table = super.createLineAboutYourself();
+        table.appendChild(createTrTable(['Age',this.age]));
+        table.appendChild(createTrTable(['Doctor',this.nameDoctor]));
+        table.appendChild(createTrTable(['Normal pressure',this.normalPressure]));
+        table.appendChild(createTrTable(['Body mass index',this.bodyMassIndex]));
+        table.appendChild(createTrTable(['Past diseases of the cardiovascular system',this.pastIllnesses]));
+        table.appendChild(createTrTable(['Comments',this.additionalComments]));
+        return table;
     }
 }

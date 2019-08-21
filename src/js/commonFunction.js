@@ -30,6 +30,14 @@ export function randomId(){
     return `f${(+new Date).toString(16)}`
 }
 
+export function createTrTable(array){
+    let tr = createElement('tr',['something']);
+    array.forEach((element)=>{
+        tr.appendChild(createElement('td',['something'],'','',false,element));
+    });
+    return tr;
+}
+
 export function createWindow(createFields) {
     const dialogWrap = createElement('div',['dialog']);
     dialogWrap.style.height =  document.documentElement.scrollHeight + 'px';
@@ -52,9 +60,12 @@ export function createWindow(createFields) {
 export function createSelect() {
     const dialogSelect = createElement('select',["dialog__doctor"]);
     const dialogSelectOpt = createElement('option',[],"","",false,"Cardiologist");
+    dialogSelectOpt.value='Cardiologist';
     dialogSelect.appendChild(dialogSelectOpt.cloneNode(true));
+    dialogSelectOpt.value='Dentist';
     dialogSelectOpt.innerText = 'Dentist';
     dialogSelect.appendChild(dialogSelectOpt.cloneNode(true));
+    dialogSelectOpt.value='Therapist';
     dialogSelectOpt.innerText = 'Therapist';
     dialogSelect.appendChild(dialogSelectOpt.cloneNode(true));
 

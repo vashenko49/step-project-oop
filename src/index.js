@@ -7,15 +7,16 @@ import {generationСard} from "./js/cards";
 import {randomId} from "./js/commonFunction";
 export let globalObjectCards = {};
 
-let board;
 globalObjectCards['test']= new Therapist('gogo','gogo','name','last','middle','fadssd');
-let card = generationСard('test');
-document.body.appendChild(card);
+
+let board;
+
 
 
 window.addEventListener('load',function () {
     board=document.getElementById('board');
-
+    let card = generationСard('test');
+    board.appendChild(card);
 });
 
 document.querySelector('.header__create-btn').addEventListener('click', event => {

@@ -2,8 +2,12 @@ import {createElement} from "./commonFunction";
 import {globalObjectCards} from "../index";
 import {updateLocalStrg} from "./commonFunction";
 import {createWindow} from "./commonFunction";
+import {Therapist} from "./Classes/Therapist";
+import {Dentist} from "./Classes/Dentist";
+import {Cardiologist} from "./Classes/Cardiologist";
 
 export function generationСard (id) {
+    console.log(id);
     let card = createElement('div',['card'],id);
     let buttonClose = createElement('button',["card__delete"]);
     buttonClose.innerHTML="Delete";
@@ -13,9 +17,9 @@ export function generationСard (id) {
         updateLocalStrg('cards', globalObjectCards);
         if (!globalObjectCards[id]) {
             document.body.appendChild(createWindow(function () {
-               const message = createElement('p', ['dialog__message']);
-               message.innerText = 'Deleted successfully';
-               return message;
+                const message = createElement('p', ['dialog__message']);
+                message.innerText = 'Deleted successfully';
+                return message;
             }));
         }
     });
@@ -31,18 +35,22 @@ export function generationСard (id) {
 
     let buttonAdditionInf = createElement('button',['card__more']);
     buttonAdditionInf.innerHTML = "Показать больше";
+
     buttonAdditionInf.addEventListener('click',function () {
-
-        createWindow(function () {
-            let informationAboutCard = createElement('div',['something']);
-            for(let key in globalObjectCards[id]){
-
+                console.log('be');
+        console.log(id);
+        document.body.appendChild(createWindow(function () {
+            if(globalObjectCards[id]['nameDoctor'] === "Therapist"){
+                return Therapist.createLineAboutYourself.call(globalObjectCards[id]);
+            }else if(globalObjectCards[id]['nameDoctor'] === "Dentist"){
+                return Dentist.createLineAboutYourself.call(globalObjectCards[id]);
+            }else if(globalObjectCards[id]['nameDoctor'] === "Cardiologist"){
+                return Cardiologist.createLineAboutYourself.call(globalObjectCards[id])
             }
-        });
-        /**
-         * сгенерить диалоговое окно с информацие про карточку
-         */
-        console.log(globalObjectCards[id]);
+            else {
+                return createElement('p',[],'','',false,'not found')
+            }
+        }));
     });
 
     card.appendChild(buttonAdditionInf);
