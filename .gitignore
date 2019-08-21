@@ -3,6 +3,7 @@
 psd-photoshop/**/*
 node_modules/**/*
 task/**/*
+build/**/*
 # files ignore
 *.iml
 *.xml
