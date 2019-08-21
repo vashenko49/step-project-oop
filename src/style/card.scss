@@ -1,7 +1,30 @@
-.something{
-  background-color: red;
-}
+.card{
+  //position: absolute;
 
-p{
-  background: red;
+  height: 170px;
+  width: 160px;
+  padding: 8px;
+  border: 5px solid $main-color;
+  background-color: $bg-color;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  &__item{
+    margin-left: 15px;
+    font-family: $font-family;
+    word-wrap: break-word;
+  }
+  &__delete, &__more{
+    background-color: $main-color;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s background-color ease;
+  }
+  &__more{
+
+  }
 }

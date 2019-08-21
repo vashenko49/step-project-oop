@@ -1,12 +1,12 @@
 import {createElement} from "../commonFunction";
 
 export class Visit {
-    constructor(firstName, lastName, middleName, purposeVisit) {
+    constructor(firstName, lastName, middleName, purposeVisit,additionalComments='No comments' ) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.middleName = middleName;
         this.purposeVisit = purposeVisit;
-        this.additionalComments = "No comments"
+        this.additionalComments = additionalComments;
     }
     static createField(){
         let fragment = document.createDocumentFragment();

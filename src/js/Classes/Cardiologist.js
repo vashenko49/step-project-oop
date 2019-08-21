@@ -3,8 +3,8 @@ import {createElement} from "../commonFunction";
 
 
 export class Cardiologist extends Visit{
-    constructor(purposeVisit,normalPressure,bodyMassIndex, pastIllnesses,age, firstName, lastName, middleName){
-        super(firstName, lastName, middleName, purposeVisit);
+    constructor(purposeVisit,normalPressure,bodyMassIndex, pastIllnesses,age, firstName, lastName, middleName, additionalComments){
+        super(firstName, lastName, middleName, purposeVisit, additionalComments);
         this.nameDoctor = "Кардиолог";
         this.age=age;
         this.normalPressure = normalPressure;

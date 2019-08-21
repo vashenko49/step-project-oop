@@ -1,7 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin: 50px 15%;
+  @extend %margin;
   padding: 10px;
   background-color: $bg-color;
   font-size: 20px;

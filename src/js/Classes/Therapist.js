@@ -2,8 +2,8 @@ import {Visit} from "./Visit";
 import {createElement} from "../commonFunction";
 
 export class Therapist extends Visit {
-    constructor(purposeVisit,age,firstName, lastName, middleName){
-        super(firstName, lastName, middleName, purposeVisit);
+    constructor(purposeVisit,age,firstName, lastName, middleName, additionalComments){
+        super(firstName, lastName, middleName, purposeVisit, additionalComments);
         this.age=age;
         this.nameDoctor = "Терапевт";
     }

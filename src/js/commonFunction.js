@@ -1,4 +1,4 @@
-export function createElement(tag,classCSSArray=[], id="", placeHolder="",required =false) {
+export function createElement(tag,classCSSArray=[], id="", placeHolder="",required =false,text ="") {
     if(tag){
         let element = document.createElement(tag);
         if(Array.isArray(classCSSArray)){
@@ -14,6 +14,9 @@ export function createElement(tag,classCSSArray=[], id="", placeHolder="",requir
             if(required){
                 element.required = required;
             }
+            if(text){
+                element.innerHTML = text;
+            }
         }else {
             throw Error('didn\'t pass array classes css')
         }
@@ -21,4 +24,8 @@ export function createElement(tag,classCSSArray=[], id="", placeHolder="",requir
     }else {
         throw Error('didn’t pass tag')
     }
+}
+
+export function randomId(){
+    return `f${(+new Date).toString(16)}`
 }

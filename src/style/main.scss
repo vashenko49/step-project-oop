@@ -1,8 +1,16 @@
 $font-family: Factoria, sans-serif;
 $bg-color: #acd8ad;
 $main-color: #74d24a;
+%margin{
+   margin: 50px 50px;
+}
+.container{
+   min-width: 600px;
+}
+
 
 @import "reset";
 @import "font";
 @import "header";
+@import "board";
 @import "card";

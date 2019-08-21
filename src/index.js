@@ -1,14 +1,22 @@
 import {Cardiologist} from "./js/Classes/Cardiologist";
 import {Dentist} from "./js/Classes/Dentist";
 import {Therapist} from "./js/Classes/Therapist";
+import {generationСard} from "./js/cards";
+import {randomId} from "./js/commonFunction";
+export let globalObjectCards = {};
 
-document.body.appendChild(Cardiologist.createField());
-console.log(Dentist.createField());
-console.log(Therapist.createField());
+let board;
+globalObjectCards['test']= new Therapist('gogo','gogo','name','last','middle','fadssd');
+let card = generationСard('test');
+document.body.appendChild(card);
 
-let checl = document.getElementById('check');
-checl.addEventListener('click',function () {
-    console.log(Cardiologist.findField());
+
+window.addEventListener('load',function () {
+    board=document.getElementById('board');
+
 });
 
+let car = Cardiologist.createField();
+let den = Dentist.createField();
+let ther = Therapist.createField();
 
