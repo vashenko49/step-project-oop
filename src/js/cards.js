@@ -1,19 +1,23 @@
 import {createElement} from "./commonFunction";
 import {globalObjectCards} from "../index";
+import {updateLocalStrg} from "./commonFunction";
+import {createWindow} from "./commonFunction";
 
 export function generationСard (id) {
     let card = createElement('div',['card'],id);
     let buttonClose = createElement('button',["card__delete"]);
     buttonClose.innerHTML="Delete";
     buttonClose.addEventListener('click',function () {
-       delete globalObjectCards[id];
-       card.remove();
-        /**
-         * подключить функцию перезаписи globalObjectCards в localStorg
-         */
-        /**
-         * если не будет что делать можно создать модальное окно про успешное удаленее
-         */
+        delete globalObjectCards[id];
+        card.remove();
+        updateLocalStrg('cards', globalObjectCards);
+        if (!globalObjectCards[id]) {
+            document.body.appendChild(createWindow(function () {
+               const message = createElement('p', ['dialog__message']);
+               message.innerText = 'Deleted successfully';
+               return message;
+            }));
+        }
     });
     card.appendChild(buttonClose);
     if(globalObjectCards[id]){
@@ -30,7 +34,7 @@ export function generationСard (id) {
     buttonAdditionInf.addEventListener('click',function () {
         /**
          * сгенерить диалоговое окно с информацие про карточку
-          */
+         */
         console.log(globalObjectCards[id]);
     });
 
