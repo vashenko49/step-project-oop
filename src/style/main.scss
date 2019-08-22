@@ -8,10 +8,22 @@ $main-color: #74d24a;
    min-width: 600px;
 }
 
+%button{
+   background-color: $main-color;
+   border-radius: 5px;
+   font-size: 16px;
+   font-family: inherit;
+   color: #fff;
+   cursor: pointer;
+   outline: none;
+   transition: 0.3s background-color ease;
+}
 
 @import "reset";
 @import "font";
 @import "header";
 @import "board";
 @import "dialog_window";
+@import "dialog_window_table";
+@import "dialog_window_form";
 @import "card";

@@ -48,7 +48,7 @@ export function generationСard (id) {
     }
 
     let buttonAdditionInf = createElement('button',['card__more']);
-    buttonAdditionInf.innerHTML = "Показать больше";
+    buttonAdditionInf.innerHTML = "Show more";
 
     buttonAdditionInf.addEventListener('click',function () {
         document.body.appendChild(createWindow(function () {

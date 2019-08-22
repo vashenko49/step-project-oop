@@ -14,11 +14,11 @@ export class Cardiologist extends Visit{
     }
     static createField() {
         let fragment = super.createField();
-        fragment.appendChild(createElement('input',['something'],'age','Enter your age', true));
-        fragment.appendChild(createElement('input',['something'],'normalPressure','Enter your normal pressure', true));
-        fragment.appendChild(createElement('input',['something'],'bodyMassIndex','Enter your body mass index', true));
-        fragment.appendChild(createElement('input',['something'],'pastIllnesses','Enter your past diseases of the cardiovascular system', true));
-        fragment.appendChild(createElement('textarea', ['something'],'additionalComments','Enter comments'));
+        fragment.appendChild(createElement('input',['form__input'],'age','Enter your age', true));
+        fragment.appendChild(createElement('input',['form__input'],'normalPressure','Enter your normal pressure', true));
+        fragment.appendChild(createElement('input',['form__input'],'bodyMassIndex','Enter your body mass index', true));
+        fragment.appendChild(createElement('input',['form__input'],'pastIllnesses','Enter your past diseases of the cardiovascular system', true));
+        fragment.appendChild(createElement('textarea', ['form__input','form__textarea'],'additionalComments','Enter comments'));
         return fragment;
     }
     static findField() {

@@ -12,10 +12,12 @@
 
   &__window {
     position: relative;
-    padding: 10px;
+    padding: 20px;
     border: 2px solid $main-color;
-    width: 200px;
+    min-width: 350px;
+    max-width: 750px;
     min-height: 150px;
+    max-height: 800px;
     background-color: #fff;
   }
 

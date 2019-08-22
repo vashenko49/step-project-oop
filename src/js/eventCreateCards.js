@@ -35,7 +35,7 @@ function createSelect(){
     dialogSelect.appendChild(dialogSelectOpt.cloneNode(true));
 
     let containerInputs = createElement('div',['something']);
-    containerInputs.appendChild(createElement('p',['something'],'','',false,'select doctor'));
+    containerInputs.appendChild(createElement('p',['selectDoctor'],'','',false,'select doctor'));
 
 
 
@@ -45,15 +45,14 @@ function createSelect(){
             containerInputs.removeChild(containerInputs.firstChild);
         }
 
-        let fomr = createElement('form',['something']);
-        let submit = createElement('input',['something']);
+        let fomr = createElement('form',['form']);
+        let submit = createElement('input',['form__submit']);
         submit.setAttribute('type','submit');
         submit.value = 'Create the card';
         if(this.value==="Therapist"){
             fomr.appendChild(Therapist.createField.call(this));
         }else if(this.value==="Cardiologist"){
             fomr.appendChild(Cardiologist.createField.call(this));
-
         }else if(this.value==='Dentist'){
             fomr.appendChild(Dentist.createField.call(this));
         }

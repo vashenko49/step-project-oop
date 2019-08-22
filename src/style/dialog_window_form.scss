@@ -1,0 +1,40 @@
+.selectDoctor{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: $font-family;
+  font-size: 28px;
+}
+.dialog__doctor{
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-family: $font-family;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+
+  &__submit{
+    @extend %button;
+    height: 50px;
+    &:hover{
+      background-color: #fff;
+      color: $main-color;
+    }
+  }
+
+
+  &__input{
+    margin: 4px 0 4px 0;
+    height: 30px;
+    padding: 5px;
+    font-family: $font-family;
+    font-size: 16px;
+  }
+  &__textarea{
+    resize: none;
+    height: 100px;
+  }
+}

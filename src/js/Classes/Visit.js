@@ -10,10 +10,10 @@ export class Visit {
     }
     static createField(){
         let fragment = document.createDocumentFragment();
-        fragment.appendChild(createElement('input',['something'],'firstName','Enter your first name', true));
-        fragment.appendChild(createElement('input',['something'],'lastName','Enter your last name', true));
-        fragment.appendChild(createElement('input',['something'],'middleName','Enter your middle name', true));
-        fragment.appendChild(createElement('input',['something'],'purposeVisit','Purpose of the visit', true));
+        fragment.appendChild(createElement('input',['form__input'],'firstName','Enter your first name', true));
+        fragment.appendChild(createElement('input',['form__input'],'lastName','Enter your last name', true));
+        fragment.appendChild(createElement('input',['form__input'],'middleName','Enter your middle name', true));
+        fragment.appendChild(createElement('input',['form__input'],'purposeVisit','Purpose of the visit', true));
         return fragment;
     }
     static findField(){
@@ -26,7 +26,7 @@ export class Visit {
         return result
     }
     static createLineAboutYourself(){
-        let table = createElement('table',['something']);
+        let table = createElement('table',['table']);
         table.appendChild(createTrTable(['First name',this.firstName]));
         table.appendChild(createTrTable(['Last name',this.lastName]));
         table.appendChild(createTrTable(['Middle name',this.middleName]));

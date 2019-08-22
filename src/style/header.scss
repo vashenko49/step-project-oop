@@ -14,14 +14,7 @@
 
   &__create-btn {
     width: 100px;
-    background-color: $main-color;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: inherit;
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-    transition: 0.3s background-color ease;
+    @extend %button;
   }
 
   &__create-btn:hover {

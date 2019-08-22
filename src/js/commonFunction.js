@@ -17,6 +17,12 @@ export function createElement(tag,classCSSArray=[], id="", placeHolder="",requir
             if(text){
                 element.innerHTML = text;
             }
+            if(tag.toUpperCase()==="textarea".toUpperCase()){
+                element.onpaste = function () {
+                    return false;
+                };
+                element.setAttribute('maxlength',"400");
+            }
         }else {
             throw Error('didn\'t pass array classes css')
         }
@@ -31,9 +37,9 @@ export function randomId(){
 }
 
 export function createTrTable(array){
-    let tr = createElement('tr',['something']);
+    let tr = createElement('tr',['tr']);
     array.forEach((element)=>{
-        tr.appendChild(createElement('td',['something'],'','',false,element));
+        tr.appendChild(createElement('td',['td'],'','',false,element));
     });
     return tr;
 }
