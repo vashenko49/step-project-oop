@@ -9,8 +9,8 @@ export class Therapist extends Visit {
     }
     static createField(){
         let fragment = super.createField();
-        fragment.appendChild(createElement('input',['something'],'age',true));
-        fragment.appendChild(createElement('textarea', ['something'],'additionalComments','Enter comments'));
+        fragment.appendChild(createElement('input',['something'],'age',"Enter your age",true));
+        fragment.appendChild(createElement('textarea', ['something'],'additionalComments','Enter comments',true));
         return fragment;
     }
     static findField() {

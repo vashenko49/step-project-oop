@@ -57,21 +57,6 @@ export function createWindow(createFields) {
     return dialogWrap;
 }
 
-export function createSelect() {
-    const dialogSelect = createElement('select',["dialog__doctor"]);
-    const dialogSelectOpt = createElement('option',[],"","",false,"Cardiologist");
-    dialogSelectOpt.value='Cardiologist';
-    dialogSelect.appendChild(dialogSelectOpt.cloneNode(true));
-    dialogSelectOpt.value='Dentist';
-    dialogSelectOpt.innerText = 'Dentist';
-    dialogSelect.appendChild(dialogSelectOpt.cloneNode(true));
-    dialogSelectOpt.value='Therapist';
-    dialogSelectOpt.innerText = 'Therapist';
-    dialogSelect.appendChild(dialogSelectOpt.cloneNode(true));
-
-    return dialogSelect;
-}
-
 export function updateLocalStrg(key, obj) {
   if (obj) {
     localStorage.setItem(key, JSON.stringify(obj))

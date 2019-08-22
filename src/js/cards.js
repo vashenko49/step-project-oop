@@ -57,3 +57,5 @@ export function generationСard (id) {
     card.draggable=true;
     return card;
 }
+
+

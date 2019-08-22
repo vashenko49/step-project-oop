@@ -1,13 +1,13 @@
 import {Cardiologist} from "./js/Classes/Cardiologist";
 import {Dentist} from "./js/Classes/Dentist";
 import {Therapist} from "./js/Classes/Therapist";
-import {createSelect} from "./js/commonFunction";
-import {createWindow} from "./js/commonFunction";
 import {generationСard} from "./js/cards";
-import {randomId} from "./js/commonFunction";
+import {putCreateButton} from "./js/eventCreateCards";
 export let globalObjectCards = {};
 
 globalObjectCards['test']= new Therapist('gogo','gogo','name','last','middle','fadssd');
+globalObjectCards['df']= new Cardiologist('gogo','gogo','name','last','middle','fadssd','asd','sdfsdf','sdfsdf');
+globalObjectCards['qqq'] = new Dentist('gogo','gogo','name','last','middle','dentist');
 
 let board;
 
@@ -15,20 +15,9 @@ let board;
 
 window.addEventListener('load',function () {
     board=document.getElementById('board');
-    let card = generationСard('test');
-    board.appendChild(card);
+    board.appendChild(generationСard('test'));
+    board.appendChild(generationСard('df'));
+    board.appendChild(generationСard('qqq'));
 });
 
-document.querySelector('.header__create-btn').addEventListener('click', event => {
-    document.body.prepend(createWindow(function () {
-        const elements = document.createElement('fragment');
-        elements.appendChild(createSelect());
-        elements.appendChild(Cardiologist.createField());
-        return elements;
-    }));
-});
-
-let car = Cardiologist.createField();
-let den = Dentist.createField();
-let ther = Therapist.createField();
-
+document.querySelector('.header__create-btn').addEventListener('click', putCreateButton);
