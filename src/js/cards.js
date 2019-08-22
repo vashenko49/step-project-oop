@@ -1,5 +1,5 @@
 import {createElement} from "./commonFunction";
-import {globalObjectCards} from "../index";
+import {board, globalObjectCards, tableEmpty} from "../index";
 import {updateLocalStrg} from "./commonFunction";
 import {createWindow} from "./commonFunction";
 import {Therapist} from "./Classes/Therapist";
@@ -20,6 +20,9 @@ export function generationСard (id) {
                 message.innerText = 'Deleted successfully';
                 return message;
             }));
+        }
+        if(!board.contains(document.querySelector('.card'))){
+            board.appendChild(tableEmpty);
         }
     });
     card.appendChild(buttonClose);

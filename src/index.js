@@ -1,11 +1,21 @@
 import {putCreateButton} from "./js/eventCreateCards";
 import {generationСard} from "./js/cards";
 import {makeClone} from "./js/commonFunction";
-export let globalObjectCards = {};
+import {dragDrop, dragOver, dragStart} from "./js/DragAndDrop";
 
+export let globalObjectCards = {};
+export let tableEmpty;
+export let board;
 
 window.addEventListener('load',function () {
-    let board=document.getElementById('board');
+    board=document.getElementById('board');
+
+    tableEmpty = document.getElementById('emptyBoard');
+
+    board.addEventListener('dragstart', dragStart);
+    board.addEventListener('dragover', dragOver);
+    board.addEventListener('drop', dragDrop);
+
 
     let localStorg = localStorage.getItem('globalObjectCards');
 
@@ -15,6 +25,9 @@ window.addEventListener('load',function () {
         for(let id in localStorg){
             globalObjectCards[id] = makeClone(localStorg[id]);
             board.appendChild(generationСard(id));
+            if(board.contains(tableEmpty)){
+                tableEmpty.remove();
+            }
         }
     }
 });

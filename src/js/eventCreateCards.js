@@ -3,7 +3,7 @@ import {Therapist} from "./Classes/Therapist";
 import {Cardiologist} from "./Classes/Cardiologist";
 import {Dentist} from "./Classes/Dentist";
 import {generationСard} from "./cards";
-import {globalObjectCards} from "../index";
+import {globalObjectCards, tableEmpty} from "../index";
 
 
 export function putCreateButton(event) {
@@ -61,6 +61,11 @@ function createSelect(){
         fomr.addEventListener('submit',function (event) {
             let selected =  dialogSelect.options[dialogSelect.selectedIndex].value;
 
+            let board=document.getElementById('board');
+            if(board.contains(tableEmpty)){
+                tableEmpty.remove();
+            }
+
             let foundInform;
             let id = randomId();
 
@@ -77,7 +82,6 @@ function createSelect(){
                 event.preventDefault();
             }
 
-            let board=document.getElementById('board');
 
             updateLocalStrg('globalObjectCards',globalObjectCards);
             board.appendChild(generationСard(id));
