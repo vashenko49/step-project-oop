@@ -1,9 +1,10 @@
 .board{
  @extend %margin;
-  border: 12px solid $main-color;
+  border: 2px solid $main-color;
   background-color: $bg-color;
   position: relative;
   height: 70vh;
+  overflow-y: auto;
   &__inscription{
     position: absolute;
     top: 50%;
