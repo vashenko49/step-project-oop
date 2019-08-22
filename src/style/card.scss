@@ -1,13 +1,11 @@
 .card{
-  //position: absolute;
-
   height: 170px;
   width: 160px;
   padding: 8px;
-  border: 5px solid $main-color;
+  border: 3px solid $main-color;
   background-color: $bg-color;
   justify-content: space-between;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   &__item{
     margin-left: 15px;

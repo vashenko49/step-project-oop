@@ -4,7 +4,12 @@
   background-color: $bg-color;
   position: relative;
   height: 70vh;
+<<<<<<< HEAD
+  padding: 10px;
+||||||| merged common ancestors
+=======
   overflow-y: auto;
+>>>>>>> remotes/origin/drag_n_drop
   &__inscription{
     position: absolute;
     top: 50%;

@@ -17,8 +17,6 @@ window.addEventListener('load',function () {
             board.appendChild(generationСard(id));
         }
     }
-    console.log(globalObjectCards);
 });
 
 document.querySelector('.header__create-btn').addEventListener('click', putCreateButton);
-
