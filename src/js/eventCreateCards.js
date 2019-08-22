@@ -1,7 +1,9 @@
-import {createElement, createWindow} from "./commonFunction";
+import {createElement, createWindow, randomId, updateLocalStrg} from "./commonFunction";
 import {Therapist} from "./Classes/Therapist";
 import {Cardiologist} from "./Classes/Cardiologist";
 import {Dentist} from "./Classes/Dentist";
+import {generationСard} from "./cards";
+import {globalObjectCards} from "../index";
 
 
 export function putCreateButton(event) {
@@ -11,6 +13,7 @@ export function putCreateButton(event) {
 }
 
 
+//все в куче потому что туту очень важен контекст выполение событий, все сдлеанно на замыкании что бы не заводить очень много переменных
 function createSelect(){
     let fragment = document.createDocumentFragment();
 
@@ -35,6 +38,7 @@ function createSelect(){
     containerInputs.appendChild(createElement('p',['something'],'','',false,'select doctor'));
 
 
+
     dialogSelect.addEventListener('change',function () {
 
         while (containerInputs.firstChild) {
@@ -44,7 +48,7 @@ function createSelect(){
         let fomr = createElement('form',['something']);
         let submit = createElement('input',['something']);
         submit.setAttribute('type','submit');
-        submit.value = 'Create';
+        submit.value = 'Create the card';
         if(this.value==="Therapist"){
             fomr.appendChild(Therapist.createField.call(this));
         }else if(this.value==="Cardiologist"){
@@ -54,9 +58,41 @@ function createSelect(){
             fomr.appendChild(Dentist.createField.call(this));
         }
 
+        fomr.addEventListener('submit',function (event) {
+            let selected =  dialogSelect.options[dialogSelect.selectedIndex].value;
+
+            let foundInform;
+            let id = randomId();
+
+            if(selected==="Therapist"){
+                foundInform = Therapist.findField();
+                globalObjectCards[id] = new Therapist(foundInform['purposeVisit'],foundInform['age'],foundInform['firstName'], foundInform['lastName'], foundInform['middleName'], foundInform['additionalComments']);
+            }else if(selected==="Cardiologist") {
+                foundInform = Cardiologist.findField();
+                globalObjectCards[id] = new Cardiologist(foundInform['purposeVisit'],foundInform['normalPressure'],foundInform['bodyMassIndex'], foundInform['pastIllnesses'],foundInform['age'], foundInform['firstName'], foundInform['lastName'], foundInform['middleName'], foundInform['additionalComments']);
+            }else if(selected==='Dentist'){
+                foundInform = Dentist.findField();
+                globalObjectCards[id] = new Dentist(foundInform['purposeVisit'],foundInform['lastVisit'],foundInform['firstName'], foundInform['lastName'], foundInform['middleName'], foundInform['additionalComments']);
+            }else {
+                event.preventDefault();
+            }
+
+            let board=document.getElementById('board');
+
+            updateLocalStrg('globalObjectCards',globalObjectCards);
+            board.appendChild(generationСard(id));
+
+
+            let removeWindow = document.getElementById('dialog');
+            removeWindow.remove();
+
+            event.preventDefault();
+       });
+
         fomr.appendChild(submit);
         containerInputs.appendChild(fomr);
     });
+
 
 
     fragment.appendChild(dialogSelect);
@@ -64,3 +100,5 @@ function createSelect(){
 
     return fragment;
 }
+
+

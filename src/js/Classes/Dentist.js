@@ -15,8 +15,8 @@ export class Dentist extends Visit{
     }
     static findField() {
         let result = super.findField();
-        result.lastVisit = document.getElementById(lastVisit).value;
-        return result
+        result.lastVisit = document.getElementById("lastVisit").value;
+        return result;
     }
     static createLineAboutYourself(){
         let table = super.createLineAboutYourself();

@@ -7,14 +7,13 @@ import {Dentist} from "./Classes/Dentist";
 import {Cardiologist} from "./Classes/Cardiologist";
 
 export function generationСard (id) {
-    console.log(id);
     let card = createElement('div',['card'],id);
     let buttonClose = createElement('button',["card__delete"]);
     buttonClose.innerHTML="Delete";
     buttonClose.addEventListener('click',function () {
         delete globalObjectCards[id];
+        updateLocalStrg('globalObjectCards',globalObjectCards);
         card.remove();
-        updateLocalStrg('cards', globalObjectCards);
         if (!globalObjectCards[id]) {
             document.body.appendChild(createWindow(function () {
                 const message = createElement('p', ['dialog__message']);
@@ -37,8 +36,6 @@ export function generationСard (id) {
     buttonAdditionInf.innerHTML = "Показать больше";
 
     buttonAdditionInf.addEventListener('click',function () {
-                console.log('be');
-        console.log(id);
         document.body.appendChild(createWindow(function () {
             if(globalObjectCards[id]['nameDoctor'] === "Therapist"){
                 return Therapist.createLineAboutYourself.call(globalObjectCards[id]);
@@ -57,5 +54,8 @@ export function generationСard (id) {
     card.draggable=true;
     return card;
 }
+
+
+
 
 

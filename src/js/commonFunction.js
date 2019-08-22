@@ -39,7 +39,7 @@ export function createTrTable(array){
 }
 
 export function createWindow(createFields) {
-    const dialogWrap = createElement('div',['dialog']);
+    const dialogWrap = createElement('div',['dialog'],'dialog');
     dialogWrap.style.height =  document.documentElement.scrollHeight + 'px';
     const dialogWindow = createElement('div',['dialog__window']);
     const dialogClose = createElement('span',['dialog__close'],"","",false,'&#10006');
@@ -60,7 +60,18 @@ export function createWindow(createFields) {
 export function updateLocalStrg(key, obj) {
   if (obj) {
     localStorage.setItem(key, JSON.stringify(obj))
-  } else {
-    localStorage.removeItem(key);
   }
+}
+
+export function makeClone(obj) {
+    let clone = {};
+    for (let prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            if ("object"===typeof obj[prop])
+                clone[prop] = makeClone(obj[prop]);
+            else
+                clone[prop] = obj[prop];
+        }
+    }
+    return clone;
 }
