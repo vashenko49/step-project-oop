@@ -1,3 +1,5 @@
+import {heightZIndex} from "../index";
+
 let dragged;
 let shiftX;
 let shiftY;
@@ -14,6 +16,7 @@ export function dragStart() {
     if (event.target.classList.contains('card')) {
         dragged = event.target;
         dragged.style.position = 'absolute';
+        dragged.style.zIndex = `${heightZIndex++}`;
         shiftX = event.pageX - getCoords(dragged).left;
         shiftY = event.pageY - getCoords(dragged).top;
     }

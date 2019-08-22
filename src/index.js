@@ -3,6 +3,7 @@ import {generationСard} from "./js/cards";
 import {makeClone} from "./js/commonFunction";
 import {dragDrop, dragOver, dragStart} from "./js/DragAndDrop";
 
+export let heightZIndex = 9;
 export let globalObjectCards = {};
 export let tableEmpty;
 export let board;

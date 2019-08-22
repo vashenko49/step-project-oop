@@ -1,5 +1,5 @@
-import {createElement} from "./commonFunction";
-import {board, globalObjectCards, tableEmpty} from "../index";
+import {createElement, randomСoordinates} from "./commonFunction";
+import {board, globalObjectCards, heightZIndex, tableEmpty} from "../index";
 import {updateLocalStrg} from "./commonFunction";
 import {createWindow} from "./commonFunction";
 import {Therapist} from "./Classes/Therapist";
@@ -8,6 +8,18 @@ import {Cardiologist} from "./Classes/Cardiologist";
 
 export function generationСard (id) {
     let card = createElement('div',['card'],id);
+
+    card.addEventListener('click',function () {
+        this.style.zIndex = `${heightZIndex++}`
+    });
+
+    let randmCoord = randomСoordinates();
+    card.style.position = 'absolute';
+    card.style.left =  `${randmCoord.left}px`;
+    card.style.top = `${randmCoord.top}px`;
+
+    globalObjectCards[id].coordinates = randmCoord;
+
     let buttonClose = createElement('button',["card__delete"]);
     buttonClose.innerHTML="Delete";
     buttonClose.addEventListener('click',function () {
