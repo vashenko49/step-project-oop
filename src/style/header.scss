@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  @extend %margin;
+  padding: 10px;
+  background-color: $bg-color;
+  font-size: 20px;
+  font-family: $font-family;
+  color: #fff;
+
+  &__logo-img {
+    width: 60px;
+  }
+
+  &__create-btn {
+    width: 100px;
+    @extend %button;
+  }
+
+  &__create-btn:hover {
+    @extend %buttonHover;
+  }
+}
+

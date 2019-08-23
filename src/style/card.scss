@@ -1,7 +1,21 @@
-.something{
-  background-color: red;
-}
-
-p{
-  background: red;
+.card{
+  height: 170px;
+  width: 160px;
+  padding: 8px;
+  border: 3px solid $main-color;
+  background-color: $bg-color;
+  justify-content: space-between;
+  display: inline-flex;
+  flex-direction: column;
+  &__item{
+    margin-left: 15px;
+    font-family: $font-family;
+    word-wrap: break-word;
+  }
+  &__delete, &__more{
+  @extend %button;
+    &:hover{
+      @extend %buttonHover;
+    }
+  }
 }
