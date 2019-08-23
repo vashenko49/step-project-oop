@@ -1,0 +1,39 @@
+.dialog {
+  z-index: 99999;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &__window {
+    position: relative;
+    padding: 20px;
+    border: 2px solid $main-color;
+    min-width: 350px;
+    max-width: 750px;
+    min-height: 150px;
+    max-height: 800px;
+    background-color: #fff;
+  }
+
+  &__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: inline-block;
+    font-size: 24px;
+    color: $main-color;
+    cursor: pointer;
+  }
+
+  &__message {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 20px;
+  }
+}

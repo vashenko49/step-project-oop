@@ -1,0 +1,15 @@
+.board{
+ @extend %margin;
+  border: 2px solid $main-color;
+  background-color: $bg-color;
+  position: relative;
+  height: 70vh;
+  overflow-y: auto;
+  &__inscription{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: $font-family;
+  }
+}
