@@ -70,13 +70,13 @@ function createSelect(){
 
             if(selected==="Therapist"){
                 foundInform = Therapist.findField();
-                globalObjectCards[id] = new Therapist(foundInform['purposeVisit'],foundInform['age'],foundInform['firstName'], foundInform['lastName'], foundInform['middleName'], foundInform['additionalComments']);
+                globalObjectCards[id] = new Therapist(foundInform['purposeVisit'],foundInform['age'],foundInform['firstName'], foundInform['lastName'], foundInform['middleName'], foundInform['additionalComments'], foundInform['visitDate']);
             }else if(selected==="Cardiologist") {
                 foundInform = Cardiologist.findField();
-                globalObjectCards[id] = new Cardiologist(foundInform['purposeVisit'],foundInform['normalPressure'],foundInform['bodyMassIndex'], foundInform['pastIllnesses'],foundInform['age'], foundInform['firstName'], foundInform['lastName'], foundInform['middleName'], foundInform['additionalComments']);
+                globalObjectCards[id] = new Cardiologist(foundInform['purposeVisit'],foundInform['normalPressure'],foundInform['bodyMassIndex'], foundInform['pastIllnesses'],foundInform['age'], foundInform['firstName'], foundInform['lastName'], foundInform['middleName'], foundInform['additionalComments'], foundInform['visitDate']);
             }else if(selected==='Dentist'){
                 foundInform = Dentist.findField();
-                globalObjectCards[id] = new Dentist(foundInform['purposeVisit'],foundInform['lastVisit'],foundInform['firstName'], foundInform['lastName'], foundInform['middleName'], foundInform['additionalComments']);
+                globalObjectCards[id] = new Dentist(foundInform['purposeVisit'],foundInform['lastVisit'],foundInform['firstName'], foundInform['lastName'], foundInform['middleName'], foundInform['additionalComments'], foundInform['visitDate']);
             }else {
                 event.preventDefault();
             }

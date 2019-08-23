@@ -3,8 +3,8 @@ import {createElement, createTrTable} from "../commonFunction";
 
 
 export class Cardiologist extends Visit{
-    constructor(purposeVisit,normalPressure,bodyMassIndex, pastIllnesses,age, firstName, lastName, middleName, additionalComments){
-        super(firstName, lastName, middleName, purposeVisit, additionalComments);
+    constructor(purposeVisit,normalPressure,bodyMassIndex, pastIllnesses,age, firstName, lastName, middleName, additionalComments,visitDate){
+        super(firstName, lastName, middleName, purposeVisit, additionalComments,visitDate);
         this.nameDoctor = "Cardiologist";
         this.age=age;
         this.normalPressure = normalPressure;
@@ -36,7 +36,7 @@ export class Cardiologist extends Visit{
         table.appendChild(createTrTable(['Normal pressure',this.normalPressure]));
         table.appendChild(createTrTable(['Body mass index',this.bodyMassIndex]));
         table.appendChild(createTrTable(['Past diseases of the cardiovascular system',this.pastIllnesses]));
-        table.appendChild(createTrTable(['Comments',this.additionalComments]));
+        table.appendChild(createTrTable(['Comments',this.additionalComments?this.additionalComments:'No comments']));
         return table;
     }
 }

@@ -18,8 +18,7 @@
   }
 
   &__create-btn:hover {
-    background-color: #fff;
-    color: $main-color;
+    @extend %buttonHover;
   }
 }
 

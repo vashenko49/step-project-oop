@@ -2,8 +2,8 @@ import {Visit} from "./Visit";
 import {createElement, createTrTable} from "../commonFunction";
 
 export class Dentist extends Visit{
-    constructor(purposeVisit,lastVisit,firstName, lastName, middleName, additionalComments){
-        super(firstName, lastName, middleName, purposeVisit, additionalComments);
+    constructor(purposeVisit,lastVisit,firstName, lastName, middleName, additionalComments,visitDate){
+        super(firstName, lastName, middleName, purposeVisit, additionalComments,visitDate);
         this.lastVisit = lastVisit;
         this.nameDoctor = "Dentist";
     }
@@ -22,7 +22,7 @@ export class Dentist extends Visit{
         let table = super.createLineAboutYourself();
         table.appendChild(createTrTable(['Doctor',this.nameDoctor]));
         table.appendChild(createTrTable(['Last visit',this.lastVisit]));
-        table.appendChild(createTrTable(['Comments',this.additionalComments]));
+        table.appendChild(createTrTable(['Comments',this.additionalComments?this.additionalComments:'No comments']));
         return table;
     }
 }

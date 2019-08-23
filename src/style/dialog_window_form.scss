@@ -20,12 +20,14 @@
     @extend %button;
     height: 50px;
     &:hover{
-      background-color: #fff;
-      color: $main-color;
+      @extend %buttonHover;
     }
   }
 
-
+  &__text{
+    font-family: $font-family;
+    font-size: 16px;
+  }
   &__input{
     margin: 4px 0 4px 0;
     height: 30px;

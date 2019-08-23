@@ -18,6 +18,10 @@ $main-color: #74d24a;
    outline: none;
    transition: 0.3s background-color ease;
 }
+%buttonHover{
+   background-color: #fff;
+   color: $main-color;
+}
 
 @import "reset";
 @import "font";

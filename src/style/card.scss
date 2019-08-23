@@ -13,16 +13,9 @@
     word-wrap: break-word;
   }
   &__delete, &__more{
-    background-color: $main-color;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: inherit;
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-    transition: 0.3s background-color ease;
-  }
-  &__more{
-
+  @extend %button;
+    &:hover{
+      @extend %buttonHover;
+    }
   }
 }

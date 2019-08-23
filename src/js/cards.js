@@ -18,8 +18,6 @@ export function generationСard (id) {
     card.style.left =  `${randmCoord.left}px`;
     card.style.top = `${randmCoord.top}px`;
 
-    globalObjectCards[id].coordinates = randmCoord;
-
     let buttonClose = createElement('button',["card__delete"]);
     buttonClose.innerHTML="Delete";
     buttonClose.addEventListener('click',function () {
