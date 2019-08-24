@@ -81,11 +81,3 @@ export function makeClone(obj) {
     }
     return clone;
 }
-
-
-export function randomСoordinates() {
-    let coordinates = {};
-    coordinates.left = Math.floor(Math.random() * (450 + 1));
-    coordinates.top = Math.floor(Math.random() * (450 + 1));
-    return coordinates;
-}

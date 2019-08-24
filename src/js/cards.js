@@ -1,4 +1,4 @@
-import {createElement, randomСoordinates} from "./commonFunction";
+import {createElement} from "./commonFunction";
 import {board, globalObjectCards, heightZIndex, tableEmpty} from "../index";
 import {updateLocalStrg} from "./commonFunction";
 import {createWindow} from "./commonFunction";
@@ -12,11 +12,6 @@ export function generationСard (id) {
     card.addEventListener('click',function () {
         this.style.zIndex = `${heightZIndex++}`
     });
-
-    let randmCoord = randomСoordinates();
-    card.style.position = 'absolute';
-    card.style.left =  `${randmCoord.left}px`;
-    card.style.top = `${randmCoord.top}px`;
 
     let buttonClose = createElement('button',["card__delete"]);
     buttonClose.innerHTML="Delete";
