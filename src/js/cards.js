@@ -13,6 +13,12 @@ export function generationСard (id) {
         this.style.zIndex = `${heightZIndex++}`
     });
 
+    if (globalObjectCards[id].position) {
+        card.style.position = 'absolute';
+        card.style.left =  globalObjectCards[id].position.left;
+        card.style.top = globalObjectCards[id].position.top;
+    }
+
     let buttonClose = createElement('button',["card__delete"]);
     buttonClose.innerHTML="Delete";
     buttonClose.addEventListener('click',function () {
