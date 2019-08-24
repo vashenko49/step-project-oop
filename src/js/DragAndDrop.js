@@ -1,4 +1,5 @@
-import {heightZIndex} from "../index";
+import {globalObjectCards, heightZIndex} from "../index";
+import {updateLocalStrg} from "./commonFunction";
 
 let dragged;
 let shiftX;
@@ -30,4 +31,6 @@ export function dragDrop() {
     const board = document.getElementById('board');
     dragged.style.left = event.pageX - board.offsetLeft - shiftX + 'px';
     dragged.style.top = event.pageY - board.offsetTop - shiftY + 'px';
+    globalObjectCards[dragged.id].position = {left: dragged.style.left, top: dragged.style.top};
+    updateLocalStrg('globalObjectCards',globalObjectCards);
 }
