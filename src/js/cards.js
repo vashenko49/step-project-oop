@@ -6,6 +6,7 @@ import {Therapist} from "./Classes/Therapist";
 import {Dentist} from "./Classes/Dentist";
 import {Cardiologist} from "./Classes/Cardiologist";
 
+
 export function generationСard (id) {
     let card = createElement('div',['card'],id);
 
